@@ -21,7 +21,9 @@
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis fugit neque unde omnis dolorem repudiandae aliquid quae pariatur rerum error qui, rem eveniet optio aliquam cupiditate asperiores ea temporibus animi quis magni adipisci. Voluptatem assumenda doloribus perferendis recusandae dolor, inventore, aperiam ut ratione similique quo commodi deserunt iusto nihil officia laborum animi? Aliquid, non velit laudantium accusamus animi eius accusantium? Sunt aperiam voluptates eos! Quas quasi placeat aliquid! Repellat distinctio excepturi laboriosam debitis quia. Blanditiis, dolor? Tempora rerum laudantium et sunt delectus, officia nisi repudiandae, numquam vel voluptatibus quos ab molestiae ipsam autem. Eos iusto perferendis architecto tempore, quae fuga!
                     </p>
 
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <div class="badge bg-success text-wrap w-25">
+                        50€
+                    </div>
 
                     <a href="#" class="btn btn-primary p-3 fw-bold fs-3">Réserver</a>
                 </div>
