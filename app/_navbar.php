@@ -15,13 +15,18 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="_annonces.php">Annonces</a>
+                    <a class="nav-link active" aria-current="page" href="_page-annonces.php">Annonces</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="_account.php">Mon compte</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="sign-in.php">Se connecter</a>
+
+                <li class="nav-item border rounded me-2">
+                    <a class="nav-link active" aria-current="page" href="sign-up.php">Sign up</a>
+                </li>
+
+                <li class="nav-item border rounded">
+                    <a class="nav-link active" aria-current="page" href="sign-in.php">Sign In</a>
                 </li>
             </ul>
         </div>

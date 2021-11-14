@@ -4,18 +4,20 @@ Créer une interface qui recense toutes les annonces par Pays/Ville.
 
 # Interface:
 
-Simple, intuitif, avec des forms, boutons.
+Simple, intuitif, avec des forms et des cards, boutons.
 
 # Fonctionnalités:
 
--COMPTE-
+----------------COMPTE----------------
+
 -S'inscrire
 -Se connecter
 -Supprimer son compte
 -Modif ses infos
 -Se déconnecter
 
--RESERVATION-
+-------------RESERVATION--------------
+
 -Réserver une location
 -Préciser la durée de la loc
 -Poster des annonces de loc
