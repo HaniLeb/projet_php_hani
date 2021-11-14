@@ -2,7 +2,7 @@
 include "_head.php";
 ?>
 
-<form action="_annonces.php" class="w-75 mx-auto p-5 mt-5 shadow rounded">
+<form action="#" class="w-75 mx-auto p-5 mt-5 shadow rounded">
     <h2 class="text-center">Mon compte</h2>
 
     <section class="d-flex align-items-center">
@@ -34,7 +34,7 @@ include "_head.php";
 
         <div class="w-25 p-2">
             <div class="d-flex justify-content-end mb-5">
-                <a href="add-annonce.php" class="bg-primary p-2 text-light text-center text-decoration-none rounded">Publier une annonce</a>    
+                <a href="#" class="bg-primary p-2 text-light text-center text-decoration-none rounded">Publier une annonce</a>    
             </div>
             <div class="d-flex justify-content-end mb-5">
                 <a href="#" class="bg-primary p-2 text-light text-center text-decoration-none rounded">Voir mes annonces</a> 

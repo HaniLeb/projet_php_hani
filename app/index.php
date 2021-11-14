@@ -2,20 +2,7 @@
 require "includes/config.php";
 require "includes/connect.php";
 include_once "_head.php";
-include_once "_header.php";
-$alert = false;
-
-if (isset($_GET['success'])) {
-    $alert = true;
-    if ($_GET['success'] == "addedAnnonce") {
-        $type = "success";
-        $message = "votre produit a bien été ajouté";
-    }
-}
-
-if($connexion){
-include "_page-annonces.php";
-}
+include_once "_header.php"
 ?>
 
 <main class="my-5">
