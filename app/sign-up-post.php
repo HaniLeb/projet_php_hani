@@ -5,16 +5,17 @@ echo '<pre>';
 print_r($_POST);
 echo '</pre>';
 
-/*if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmpassword'])){
-    header('Location:sign-up.php?error=missingInput');
-    exit();
-}*/
-
 // Je vérifie que tous les champs ne sont pas vides
-if(in_array('', $_POST)){
+// if(in_array('', $_POST)){
+//     header('Location:sign-up.php?error=missingInput');
+//     exit();
+// }
+
+if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['confirmpassword'])){
     header('Location:sign-up.php?error=missingInput');
     exit();
 } else{
+
     // Si tous les champs sont remplis alors j'assigne les données reçues à des variables auquel j'applique htmlspecialchars. htmlspecialchars est une fonction qui permet de virer l'ensemble des balises HTML.
 
     $username = htmlspecialchars(trim($_POST['username']));
@@ -42,18 +43,18 @@ if ($resultatVerifUsername > 0) {
     exit();
 }
 
-// $verifEmail = "SELECT COUNT(*) FROM user WHERE email = :email";
-// $reqVerifEmail = $connexion->prepare($verifEmail);
-// $reqVerifEmail->bindValue(':email', $email, PDO::PARAM_STR);
-// $reqVerifEmail->execute();
+$verifEmail = "SELECT COUNT(*) FROM user WHERE email = :email";
+$reqVerifEmail = $connexion->prepare($verifEmail);
+$reqVerifEmail->bindValue(':email', $email, PDO::PARAM_STR);
+$reqVerifEmail->execute();
 
-// $resultatVerifEmail = $reqVerifEmail->fetchColumn();
+$resultatVerifEmail = $reqVerifEmail->fetchColumn();
 
 // Je compte le mail de l'utilisateur qui possède l'email souhaité
-// if ($resultatVerifEmail > 0) {
-//     header('Location:sign-up.php?error=emailExists');
-//     exit();
-// }
+if ($resultatVerifEmail > 0) {
+    header('Location:sign-up.php?error=emailExists');
+    exit();
+}
 
 // Je vérifie que les mots de passe correspondent
 if ($password !== $confirmpassword) {

@@ -8,7 +8,7 @@ echo '</pre>';
 
 // Je vérifie que les champs en question du formulaire sont rempli
 if(empty($_POST['username']) || empty($_POST['password'])){
-header('Location:sign-up.php?error=missingInput');
+header('Location:sign-in.php?error=missingInput');
 exit();
 } else{
     // S'ils sont rempli, j'initialise les variables en les assainissant

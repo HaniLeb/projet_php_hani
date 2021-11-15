@@ -1,4 +1,5 @@
 <?php
+require "includes/config.php";
 include "_head.php";
 ?>
 

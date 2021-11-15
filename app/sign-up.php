@@ -8,7 +8,7 @@
 
         if($_GET['error'] == "missingInput"){
             $type = "danger";
-            $message = "Tous les champs sont requis";
+            $message = "Tous les champs avec une * sont requis";
         }
         if($_GET['error'] == "usernameExists"){
             $type = "danger";
@@ -37,11 +37,11 @@
 
 <?php echo $alert ? "<div class='alert alert-{$type} mt-5 text-center w-50 mx-auto'>{$message}</div>" : ''; ?>
 
-<form action="sign-up-post.php" method="POST" class="w-50 mx-auto p-4 mt-2 shadow rounded">
+<form action="sign-up-post.php" method="POST" class="w-50 mx-auto p-4 mt-5 shadow rounded">
     
 
     <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
+        <label for="username" class="form-label">Username *</label>
         <input type="text" class="form-control" name="username">
     </div>
 
@@ -61,17 +61,17 @@
     </div>
     
     <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
+        <label for="email" class="form-label">Email *</label>
         <input type="email" class="form-control" name="email">
     </div>
 
     <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
+        <label for="password" class="form-label">Password *</label>
         <input type="password" class="form-control" name="password">
     </div>
 
     <div class="mb-3">
-        <label for="confirmpassword" class="form-label">Confirm Password</label>
+        <label for="confirmpassword" class="form-label">Confirm Password *</label>
         <input type="password" class="form-control" name="confirmpassword">
     </div>
 
