@@ -35,7 +35,7 @@ include "_head.php";
 
         <div class="w-25 p-2">
             <div class="d-flex justify-content-end mb-5">
-                <a href="#" class="bg-primary p-2 text-light text-center text-decoration-none rounded">Publier une annonce</a>    
+                <a href="add-annonce.php" class="bg-primary p-2 text-light text-center text-decoration-none rounded">Publier une annonce</a>    
             </div>
             <div class="d-flex justify-content-end mb-5">
                 <a href="#" class="bg-primary p-2 text-light text-center text-decoration-none rounded">Voir mes annonces</a> 

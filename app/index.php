@@ -21,7 +21,7 @@ $alert = false;
     if (!empty($_SESSION)) {
     ?>
     <div class="d-grid gap-2 w-50 mx-auto">
-        <span class="bg-success p-2 fs-1 text-light text-center">Vous pouvez consulter les annonces !</span>
+        <span class="bg-success p-2 fs-1 text-light text-center">Vous pouvez consulter toutes les annonces !</span>
     </div>
     <?php }?>
     

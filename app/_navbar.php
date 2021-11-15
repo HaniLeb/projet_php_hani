@@ -15,7 +15,7 @@
                     <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Annonces</a>
+                    <a class="nav-link active" aria-current="page" href="page-annonces.php">Annonces</a>
                 </li>
 
                 <?php
