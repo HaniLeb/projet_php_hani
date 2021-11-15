@@ -7,7 +7,7 @@ print_r($_POST);
 echo '</pre>';
 
 // Je vérifie que les champs en question du formulaire sont rempli
-if(in_array('', $_POST)){
+if(empty($_POST['username']) || empty($_POST['password'])){
 header('Location:sign-up.php?error=missingInput');
 exit();
 } else{

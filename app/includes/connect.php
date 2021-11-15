@@ -1,10 +1,12 @@
 <?php
 require "dev.env.php";
 
-//? Méthode chaine complète (ne surtout pas push sur GitHub avec des variables de prod)
+// Méthode chaine complète (ne surtout pas push sur GitHub avec des variables de prod)
 // $connexion_string = "mysql:dbname=nomDeLaBDD;host=nomDuServeur";
+
 $connexion_string = "mysql:dbname=" . DATABASE . ";host=" . SERVER;
 
+// Try - Catch capte les erreurs du code exécuter
 try{
     // PDO = PHP DATA OBJECT - Permet d'accéder à une base de données depuis php
     $connexion = new PDO($connexion_string, USER, PASSWORD);

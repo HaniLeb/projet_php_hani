@@ -42,18 +42,18 @@ if ($resultatVerifUsername > 0) {
     exit();
 }
 
-$verifEmail = "SELECT COUNT(*) FROM user WHERE email = :email";
-$reqVerifEmail = $connexion->prepare($verifEmail);
-$reqVerifEmail->bindValue(':email', $email, PDO::PARAM_STR);
-$reqVerifEmail->execute();
+// $verifEmail = "SELECT COUNT(*) FROM user WHERE email = :email";
+// $reqVerifEmail = $connexion->prepare($verifEmail);
+// $reqVerifEmail->bindValue(':email', $email, PDO::PARAM_STR);
+// $reqVerifEmail->execute();
 
-$resultatVerifEmail = $reqVerifEmail->fetchColumn();
+// $resultatVerifEmail = $reqVerifEmail->fetchColumn();
 
 // Je compte le mail de l'utilisateur qui possède l'email souhaité
-if ($resultatVerifEmail > 0) {
-    header('Location:sign-up.php?error=emailExists');
-    exit();
-}
+// if ($resultatVerifEmail > 0) {
+//     header('Location:sign-up.php?error=emailExists');
+//     exit();
+// }
 
 // Je vérifie que les mots de passe correspondent
 if ($password !== $confirmpassword) {
