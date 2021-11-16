@@ -18,7 +18,7 @@ CREATE TABLE rentalweb.annonce(
   type VARCHAR (255) NOT NULL,
   description TEXT NOT NULL,
   country VARCHAR (255) NOT NULL,
-  town VARCHAR (255),
+  town VARCHAR (255) NOT NULL,
   cp INT (25) NOT NULL,
   price FLOAT NOT NULL,
   image VARCHAR (600),

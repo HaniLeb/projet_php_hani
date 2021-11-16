@@ -1,5 +1,6 @@
 <?php
 require "includes/config.php";
+require "includes/connect.php";
 include "_head.php";
 ?>
 

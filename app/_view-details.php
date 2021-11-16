@@ -1,4 +1,6 @@
 <?php
+$id = $_GET['id'];
+
 //? Version préparée : Elle contient des variables donc nécessaire
 $viewAnnonce = "SELECT * from annonce WHERE annonce_id = :annonce_id";
 $reqViewAnnonce = $connexion->prepare($viewAnnonce);

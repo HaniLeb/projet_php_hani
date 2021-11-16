@@ -11,11 +11,11 @@
             $message = "Tous les champs avec une * sont requis";
         }
         if($_GET['error'] == "usernameExists"){
-            $type = "danger";
+            $type = "warning";
             $message = "Ce nom d'utilisateur existe déja";
         }
         if($_GET['error'] == "emailExists"){
-            $type = "danger";
+            $type = "warning";
             $message = "Cette email est déjà utilisé";
         }
         if($_GET["error"] == "differentPasswords"){
