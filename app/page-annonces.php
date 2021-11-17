@@ -32,6 +32,6 @@ require "_view-annonces.php";
             </div>
         <?php }?>
     </div>
-</section>
 
-<?php include_once "_footer.php" ?>
+    <?php include_once "_footer.php" ?>
+</section>

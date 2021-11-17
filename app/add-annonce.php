@@ -14,7 +14,7 @@ if(isset($_GET["error"])){
     }
     if($_GET['error'] == "dateError"){
         $type = "danger";
-        $message = "La date de début ne peut pas être inférieur à la date de fin de location ";
+        $message = "La date de début ne peut pas être supérieur à la date de fin de location ";
     }
     if($_GET['error'] == "unknownError"){
         $type = "warning";
@@ -27,6 +27,14 @@ if(isset($_GET["error"])){
     if($_GET['error'] == "wrongFormat"){
         $type = "warning";
         $message = "L'image est au mauvais format : Les formats acceptés sont jpg,png,jpeg";
+    }
+}
+
+if (isset($_GET['success'])) {
+    $alert = true;
+    if ('addedAnnonce' == $_GET['success']) {
+        $type = 'success';
+        $message = 'Votre annonce a bien été ajouté';
     }
 }
 ?>
