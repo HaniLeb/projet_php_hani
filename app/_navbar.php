@@ -14,29 +14,27 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="page-annonces.php">Annonces</a>
-                </li>
-
+                
                 <?php
                 if(!empty($_SESSION)){
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="_account.php">Mon compte</a>
-                </li>
-                <li class="nav-item border rounded">
-                    <a class="nav-link active" aria-current="page" href="?logout">Logout</a>
-                </li>
+               ?>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="page-annonces.php">Annonces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="_account.php">Mon compte</a>
+                    </li>
+                    <li class="nav-item border rounded">
+                        <a class="nav-link active" aria-current="page" href="?logout">Logout</a>
+                    </li>
                 <?php }else{?>
-
-                <li class="nav-item border rounded me-2">
-                    <a class="nav-link active" aria-current="page" href="sign-up.php">Sign up</a>
-                </li>
-                <li class="nav-item border rounded me-2">
-                    <a class="nav-link active" aria-current="page" href="sign-in.php">Sign In</a>
-                </li>
+                    <li class="nav-item border rounded me-2">
+                        <a class="nav-link active" aria-current="page" href="sign-up.php">Sign up</a>
+                    </li>
+                    <li class="nav-item border rounded me-2">
+                        <a class="nav-link active" aria-current="page" href="sign-in.php">Sign In</a>
+                    </li>
                 <?php }?>
-
             </ul>
         </div>
     </div>

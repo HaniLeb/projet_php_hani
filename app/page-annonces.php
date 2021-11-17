@@ -7,7 +7,7 @@ require "_view-annonces.php";
 ?>
 
 <section class="vh-100 my-5">
-    <div class="row">
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
         <?php
         foreach($annonces as $annonce){
         ?>
@@ -17,16 +17,7 @@ require "_view-annonces.php";
                     <h5 class="card-title"> <?php echo $annonce['title']; ?> </h5>
                     <h5 class="card-title"> <?php echo $annonce['type']; ?> </h5>
                     <p class="card-text"> <?php echo $annonce['description']; ?> </p>
-                    <h6 class="card-title"> 
-                        <?php echo $annonce['country']; ?> <br>
-                        <?php echo $annonce['town']; ?> <br>
-                        <?php echo $annonce['cp']; ?> 
-                    </h6>
-                    <!-- <h5 class="card-title bg"> <?php echo $annonce['price']; ?> </h5> -->
-                    <p class="card-title">
-                        Du: <?php echo $annonce['rentalStart'] ? date('d/m/Y', strtotime($annonce['rentalStart'])) : ''; ?> <br>
-                        Au: <?php echo $annonce['rentalEnd'] ? date('d/m/Y', strtotime($annonce['rentalEnd'])) : ''; ?>
-                    </p>
+
                     <a href="annonce-details.php?id=<?php echo $annonce['annonce_id']; ?>" class="btn btn-primary">Voir l'annonce</a>
                 </div>
             </div>

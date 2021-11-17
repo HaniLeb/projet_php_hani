@@ -47,7 +47,7 @@ include "_head.php";
         </div>
     </section>
 
-    <a href="#" class="btn btn-primary d-block mt-5 w-75 mx-auto">Retour aux annonces</a>
+    <a href="page-annonces.php" class="btn btn-primary d-block mt-5 w-75 mx-auto">Retour aux annonces</a>
 </form>
 
 <?php include "_footer.php"?>
