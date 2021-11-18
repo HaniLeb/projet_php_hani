@@ -1,7 +1,8 @@
 <?php
 require "includes/config.php";
 require "includes/connect.php";
-include "_head.php";
+include_once "_navbar.php";
+
 ?>
 
 <form action="#" class="w-75 mx-auto p-5 mt-5 shadow rounded">

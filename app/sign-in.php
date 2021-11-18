@@ -1,6 +1,6 @@
 <?php
 require "includes/config.php";
-include "_head.php";
+include_once "_navbar.php";
 
 $alert = false;
 
