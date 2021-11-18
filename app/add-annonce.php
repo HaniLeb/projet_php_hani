@@ -39,7 +39,7 @@ if (isset($_GET['success'])) {
 }
 ?>
 
-<form action="add-annonce-post.php" method="POST" class="w-50 mx-auto p-4 mt-5 shadow rounded" enctype="multipart/form-data">
+<form action="add-annonce-post.php" method="POST" class="w-25 mx-auto p-4 mt-5 shadow rounded" enctype="multipart/form-data">
 
     <?php echo $alert ? "<div class='alert alert-{$type} mt-2'>{$message}</div>" : ''; ?>
     
@@ -77,12 +77,17 @@ if (isset($_GET['success'])) {
         <label for="formFile" class="form-label">Images</label>
         <input class="form-control" type="file" id="formFile" accept=".png,.jpg,.jpeg" name="image">
     </div>
-    <div class="mb-3 d-flex">
-        <label for="rentalStart" class="form-label">Du</label>
-        <input type="date" class="form-control" placeholder="01-01-2050" name="rentalStart">
+    
+    <div class="mb-3 d-flex justify-content-between">
+        <div class="w-50">
+            <label for="rentalStart" class="form-label">Du: </label>
+            <input type="date" class="form-control" placeholder="01-01-2050" name="rentalStart">
+        </div>
 
-        <label for="rentalEnd" class="form-label">Au</label>
-        <input type="date" class="form-control" placeholder="01-01-2050" name="rentalEnd">
+        <div class="w-50">
+            <label for="rentalEnd" class="form-label">Au: </label>
+            <input type="date" class="form-control" placeholder="01-01-2050" name="rentalEnd">
+        </div>
     </div>
 
     <div class="d-flex justify-content-center">

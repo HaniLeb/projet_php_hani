@@ -36,7 +36,7 @@ include_once "_view-details.php"
                     </div>
                 </div>
                 
-                <a href="page-annonces.php?" class="btn btn-primary mb-3 w-50">Retourner aux annonces</a>
+                <a href="page-annonces.php?id=<?php echo $annonce['annonce_id']; ?>" class="btn btn-primary mb-3 w-50">Retourner aux annonces</a>
             </div>
         </div>
     </div>
