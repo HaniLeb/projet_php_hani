@@ -7,18 +7,6 @@ echo '<pre>';
 var_dump($_POST);
 echo '</pre>';
 
-$getId = explode('=', $_SERVER['HTTP_REFERER'])[1];
-$altGetId = substr(strchr($_SERVER['HTTP_REFERER'], 'id'), 3);
-
-echo '<pre>';
-var_dump($getId);
-var_dump($altGetId);
-echo '</pre>';
-
-if (!($getId == $_POST['id'])) {
-    header("Location:edit-products.php?id=$getId&error=malformedInput");
-    exit();
-}
 
 if(empty($_POST['title']) || empty($_POST['type']) || empty($_POST['description']) || empty($_POST['country']) || empty($_POST['town']) || empty($_POST['cp']) || empty($_POST['price'])){
     header("Location:add-annonce.php?id=$getId&error=missingInput");
@@ -32,14 +20,14 @@ if(empty($_POST['title']) || empty($_POST['type']) || empty($_POST['description'
     $cp = htmlspecialchars(trim($_POST['cp']));
     $price = htmlspecialchars(floatval($_POST['price']));
     $id = intval($_POST['id']);
-
+    
     if(empty($_FILES['image']['name'])){
-        $imagePath = '';
+        $imagePath = 'public/uploads/noimg.png';
         $image = null;
     }else{
         $image = $_FILES['image'];
     }
-
+    
     if(!empty($_POST['rentalStart'])){
         $rentalStart = htmlspecialchars(trim($_POST['rentalStart']));
     }else{
@@ -58,19 +46,19 @@ if ($image) {
         header("Location:add-annonce.php?id=$getId&error=imageTooBig");
         exit();
     }
-
+    
     $valid_ext = ['jpg', 'jpeg', 'png'];
     $check_ext = strtolower(substr(strrchr($image['name'], '.'), 1));
-
+    
     if (!in_array($check_ext, $valid_ext)) {
         header("Location:add-annonce.php?id=$getId&error=wrongFormat");
         exit();
     }
-
+    
     $imagePath = 'public/uploads/'.uniqid().'/'.$image['name'];
-
+    
     mkdir(dirname($imagePath));
-
+    
     if (!move_uploaded_file($image['tmp_name'], $imagePath)) {
         if (!in_array($check_ext, $valid_ext)) {
             header("Location:add-annonce.php?id=$getId&error=unknownError");
@@ -84,6 +72,19 @@ if (null !== $rentalStart && null !== $rentalEnd && $rentalStart > $rentalEnd) {
     header("Location:add-annonce.php?id=$getId&error=dateError");
     exit();
 }
+$getId = explode('=', $_SERVER['HTTP_REFERER'])[1];
+// $altGetId = substr(strchr($_SERVER['HTTP_REFERER'], 'id'), 3);
+
+// echo '<pre>';
+// var_dump($getId);
+// var_dump($altGetId);
+// echo '</pre>';
+
+if (!($getId == $_POST['id'])) {
+    header("Location:edit-products.php?id=$getId&error=malformedInput");
+    exit();
+}
+
 try {
     // Modif des infos dans la BDD
     $editAnnonce = 'UPDATE annonce SET title=:title, type=:type, description=:description, country=:country, town=:town, cp=:cp, price=:price, image=:image, rentalStart=:rentalStart, rentalEnd=:rentalEnd WHERE annonce_id=:id';
@@ -101,13 +102,8 @@ try {
     $reqEditAnnonce->bindValue(':rentalEnd', $rentalEnd, PDO::PARAM_STR);
     $reqEditAnnonce->bindValue(':id', $id);
 
-    // if ($reqEditAnnonce->execute()) {
-    // header("Location:edit-annonce.php?success=modifAnnonce");
-    // exit();
-    // } else {
-    //     header("Location:edit-annonce.php?id=$getId&error=unknownError");
-    //     exit();
-    // }
+    $reqEditAnnonce->execute();
+    header("Location:edit-annonce.php?success=modifAnnonce");
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

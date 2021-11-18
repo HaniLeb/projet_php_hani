@@ -12,7 +12,8 @@ require "_view-annonces.php";
         foreach($annonces as $annonce){
         ?>
             <div class="card rounded shadow w-25">
-                <img src="<?php echo $annonce['image']; ?>" class="card-img-top" alt="<?php echo $annonce['title']; ?>">
+                <img src="<?php echo $annonce['image']; ?>" class="card-img-top" style="height: 55%; object-fit: cover;" alt="<?php echo $annonce['title']; ?>">
+
                 <div class="card-body">
                     <h5 class="card-title"> <?php echo $annonce['title']; ?> </h5>
                     <h5 class="card-title"> <?php echo $annonce['type']; ?> </h5>

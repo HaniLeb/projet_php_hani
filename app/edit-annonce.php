@@ -4,7 +4,7 @@ require "includes/config.php";
 require 'includes/connect.php';
 include_once '_head.php';
 
-// include_once "_view-details.php";
+include_once "_view-details.php";
 
 $alert = false;
 
@@ -48,46 +48,48 @@ if (isset($_GET['success'])) {
 
     <div class="mb-3">
         <label for="title" class="form-label">Titre</label>
-        <input type="text" class="form-control" placeholder="Studio pour jeune étudiant" name="title" required>
+        <input type="text" class="form-control" placeholder="Studio pour jeune étudiant" name="title" value="<?php echo $annonce['title']; ?>" required>
     </div>
     <div class="mb-3">
         <label for="type" class="form-label">Type</label>
-        <input type="text" class="form-control" placeholder="T3" name="type" required>
+        <input type="text" class="form-control" placeholder="T3" name="type" value="<?php echo $annonce['type']; ?>" required>
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" rows="3" name="description" required></textarea>
+        <textarea class="form-control" rows="3" name="description" required><?php echo $annonce['description']; ?></textarea>
     </div>
 
     <div class="mb-3">
         <label for="country" class="form-label">Pays</label>
-        <input type="text" class="form-control" placeholder="France" name="country" required>
+        <input type="text" class="form-control" placeholder="France" name="country" value="<?php echo $annonce['country']; ?>" required>
     </div>
     <div class="mb-3">
         <label for="town" class="form-label">Ville</label>
-        <input type="text" class="form-control" placeholder="Bordeaux" name="town" required>
+        <input type="text" class="form-control" placeholder="Bordeaux" name="town" value="<?php echo $annonce['town']; ?>" required>
     </div>
     <div class="mb-3">
         <label for="cp" class="form-label">Code Postal</label>
-        <input type="number" class="form-control" placeholder="33400" name="cp" required>
+        <input type="number" class="form-control" placeholder="33400" name="cp" value="<?php echo $annonce['cp']; ?>" required>
     </div>
 
     <div class="mb-3">
         <label for="price" class="form-label">Prix</label>
-        <input type="number" min="0.01" step="0.01" class="form-control" placeholder="125" name="price" required>
+        <input type="number" min="0.01" step="0.01" class="form-control" placeholder="125" name="price" value="<?php echo $annonce['price']; ?>" required>
     </div>
     <div class="mb-3">
         <label for="formFile" class="form-label">Images</label>
-        <input class="form-control" type="file" id="formFile" accept=".png,.jpg,.jpeg" name="image">
+        <input class="form-control" type="file" id="formFile" accept=".png,.jpg,.jpeg" name="image" value="<?php echo $annonce['image']; ?>">
     </div>
     <div class="mb-3">
         <label for="rentalStart" class="form-label">Du</label>
-        <input type="date" class="form-control" placeholder="01-01-2050" name="rentalStart">
+        <input type="date" class="form-control" placeholder="01-01-2050" name="rentalStart" value="<?php echo $annonce['rentalStart']; ?>">
     </div>
     <div class="mb-3">
         <label for="rentalEnd" class="form-label">Au</label>
-        <input type="date" class="form-control" placeholder="01-01-2050" name="rentalEnd">
+        <input type="date" class="form-control" placeholder="01-01-2050" name="rentalEnd" value="<?php echo $annonce['rentalEnd']; ?>">
     </div>
+
+    <input type="hidden" name="id" value="<?php echo $annonce['annonce_id']; ?>">
 
     <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-outline-warning btn-lg">Modifier l'annonce</button>

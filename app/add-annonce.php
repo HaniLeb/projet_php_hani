@@ -77,11 +77,10 @@ if (isset($_GET['success'])) {
         <label for="formFile" class="form-label">Images</label>
         <input class="form-control" type="file" id="formFile" accept=".png,.jpg,.jpeg" name="image">
     </div>
-    <div class="mb-3">
+    <div class="mb-3 d-flex">
         <label for="rentalStart" class="form-label">Du</label>
         <input type="date" class="form-control" placeholder="01-01-2050" name="rentalStart">
-    </div>
-    <div class="mb-3">
+
         <label for="rentalEnd" class="form-label">Au</label>
         <input type="date" class="form-control" placeholder="01-01-2050" name="rentalEnd">
     </div>
