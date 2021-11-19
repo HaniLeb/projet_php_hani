@@ -3,10 +3,10 @@ require "includes/config.php";
 require "includes/connect.php";
 include_once "_navbar.php";
 
-include_once "_view-details.php"
+require "_view-details.php"
 ?>
-<section class="my-5">
-    <div class="card mb-3 w-75 mx-auto rounded shadow">
+<section class="vh-100">
+    <div class="card mt-5 w-75 mx-auto rounded shadow">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="<?php echo $annonce['image']; ?>" class="card-img" alt="<?php echo $annonce['title']; ?>">
@@ -34,6 +34,9 @@ include_once "_view-details.php"
                         <button type="submit" class="btn btn-success w-100">Réserver</button>
                         <div class="mt-2">
                             <a href="edit-annonce.php?id=<?php echo $annonce['annonce_id']; ?>" class="btn btn-warning text-center w-100">Modifier</a>
+                        </div>
+                        <div class="mt-2">
+                            <a href="delete-annonce.php?id=<?php echo $annonce['annonce_id']; ?>" class="btn btn-danger text-center w-100">Supprimer</a>
                         </div>
                     </section>
 

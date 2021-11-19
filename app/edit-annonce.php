@@ -4,7 +4,7 @@ require "includes/config.php";
 require 'includes/connect.php';
 include_once "_navbar.php";
 
-include_once "_view-details.php";
+require "_view-details.php";
 
 $alert = false;
 
@@ -81,7 +81,7 @@ if (isset($_GET['success'])) {
         <section class="d-flex">
             <div class="mb-3 w-50 me-2">
                 <label for="price" class="form-label">Prix</label>
-                <input type="number" min="0.01" step="0.01" class="form-control" placeholder="125" name="price" value="<?php echo $annonce['price']; ?>" required>
+                <input type="number" class="form-control" placeholder="125" name="price" value="<?php echo $annonce['price']; ?>" required>
             </div>
             <div class="mb-3 w-50">
                 <label for="formFile" class="form-label">Images</label>
