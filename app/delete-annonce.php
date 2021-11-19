@@ -11,10 +11,10 @@ require "_view-details.php";
         <h2 class="text-center mb-5">Voulez-vous supprimer cet élément ?</h2>
 
         <section class="d-flex justify-content-around align-items-center">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <img src="<?php echo $annonce['image']; ?>" class="card-img" alt="<?php echo $annonce['title']; ?>">
             </div>
-            <div>
+            <div class="col-md-5">
                 <h5 class="card-title"> <?php echo $annonce['type']; ?> </h5>
                 <h5 class="card-title"> <?php echo $annonce['title']; ?> </h5>
                 <h6 class="card-title"> 

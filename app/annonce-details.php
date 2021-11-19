@@ -5,8 +5,8 @@ include_once "_navbar.php";
 
 require "_view-details.php"
 ?>
-<section class="vh-100">
-    <div class="card mt-5 w-75 mx-auto rounded shadow">
+
+    <div class="card my-5 w-75 mx-auto rounded shadow">
         <div class="row no-gutters">
             <div class="col-md-4">
                 <img src="<?php echo $annonce['image']; ?>" class="card-img" alt="<?php echo $annonce['title']; ?>">
@@ -48,6 +48,6 @@ require "_view-details.php"
             </div>
         </div>
     </div>
-</section>
+
 
 <?php include_once "_footer.php" ?>

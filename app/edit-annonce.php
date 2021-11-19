@@ -17,7 +17,11 @@ if(isset($_GET["error"])){
     }
     if($_GET['error'] == "dateError"){
         $type = "danger";
-        $message = "La date de début ne peut pas être supérieur à la date de fin de location ";
+        $message = "La date de début ne peut pas être supérieur à la date de fin de location";
+    }
+    if($_GET['error'] == "malformedInput"){
+        $type = "danger";
+        $message = "Erreur id";
     }
     if($_GET['error'] == "unknownError"){
         $type = "warning";
@@ -60,7 +64,7 @@ if (isset($_GET['success'])) {
         </section>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" rows="3" name="description" required><?php echo $annonce['description']; ?></textarea>
+            <textarea class="form-control" rows="3" name="description" maxlength="1500" required><?php echo $annonce['description']; ?></textarea>
         </div>
     
         <section class="d-flex">

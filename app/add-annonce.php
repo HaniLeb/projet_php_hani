@@ -57,7 +57,7 @@ if (isset($_GET['success'])) {
     
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" rows="3" name="description" required></textarea>
+            <textarea class="form-control" rows="3" name="description" maxlength="1500" required></textarea>
         </div>
     
         <section class="d-flex">
