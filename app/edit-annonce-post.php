@@ -3,9 +3,9 @@ $auth = true;
 require 'includes/config.php';
 require 'includes/connect.php';
 
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($_POST);
+// echo '</pre>';
 
 
 if(empty($_POST['title']) || empty($_POST['type']) || empty($_POST['description']) || empty($_POST['country']) || empty($_POST['town']) || empty($_POST['cp']) || empty($_POST['price'])){
@@ -81,7 +81,7 @@ $getId = explode('=', $_SERVER['HTTP_REFERER'])[1];
 // echo '</pre>';
 
 if (!($getId == $_POST['id'])) {
-    header("Location:edit-products.php?id=$getId&error=malformedInput");
+    header("Location:edit-annonce.php?id=$getId&error=malformedInput");
     exit();
 }
 
@@ -103,7 +103,7 @@ try {
     $reqEditAnnonce->bindValue(':id', $id);
 
     $reqEditAnnonce->execute();
-    header("Location:edit-annonce.php?success=modifAnnonce");
+    header("Location:edit-annonce.php?id=$getId&success=modifAnnonce");
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

@@ -1,9 +1,9 @@
 <?php
 require "includes/connect.php";
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
 // Je vérifie que tous les champs ne sont pas vides
 // if(in_array('', $_POST)){
@@ -66,23 +66,26 @@ if ($password !== $confirmpassword) {
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 // Requête préparée d'insertion dans la BDD
-
-$insertUser = "INSERT INTO user (username, lastname, firstname, adress, email, password) VALUES (:username, :lastname, :firstname, :adress, :email, :password)";
-
-$reqInsertUser = $connexion->prepare($insertUser);
-
-$reqInsertUser->bindValue(':username', $username, PDO::PARAM_STR);
-$reqInsertUser->bindValue(':lastname', $lastname, PDO::PARAM_STR);
-$reqInsertUser->bindValue(':firstname', $firstname, PDO::PARAM_STR);
-$reqInsertUser->bindValue(':adress', $adress, PDO::PARAM_STR);
-$reqInsertUser->bindValue(':email', $email, PDO::PARAM_STR);
-$reqInsertUser->bindValue(':password', $password, PDO::PARAM_STR);
-
-$resultatInsertUser = $reqInsertUser->execute();
-
-if ($resultatInsertUser) {
-    header('Location:sign-up.php?success=loginSuccessful');
-    exit();
+try {
+    $insertUser = "INSERT INTO user (username, lastname, firstname, adress, email, password) VALUES (:username, :lastname, :firstname, :adress, :email, :password)";
+    
+    $reqInsertUser = $connexion->prepare($insertUser);
+    
+    $reqInsertUser->bindValue(':username', $username, PDO::PARAM_STR);
+    $reqInsertUser->bindValue(':lastname', $lastname, PDO::PARAM_STR);
+    $reqInsertUser->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+    $reqInsertUser->bindValue(':adress', $adress, PDO::PARAM_STR);
+    $reqInsertUser->bindValue(':email', $email, PDO::PARAM_STR);
+    $reqInsertUser->bindValue(':password', $password, PDO::PARAM_STR);
+    
+    $resultatInsertUser = $reqInsertUser->execute();
+    
+    if ($resultatInsertUser) {
+        header('Location:sign-up.php?success=loginSuccessful');
+        exit();
+    }
+} catch (PDOException $e) {
+    echo "ERROR : " . $e->getMessage();
 }
 
 ?>

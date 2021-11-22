@@ -1,22 +1,7 @@
 <?php
 require "includes/config.php";
 include_once "_navbar.php";
-
-$alert = false;
-
-if(isset($_GET["error"])){
-    $alert = true;
-
-    if($_GET['error'] == "missingInput"){
-        $type = "warning";
-        $message = "Le mot de passe et l'identifiant doivent être renseignés";
-    }
-
-    if($_GET['error'] == "passwordNotMatch"){
-        $type = "danger";
-        $message = "mot de passe ou identifiant incorrect";
-    }
-}
+include_once "_alerts.php";
 ?>
 
 <div class="card-header text-center">

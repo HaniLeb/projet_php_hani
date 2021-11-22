@@ -3,9 +3,6 @@ require "includes/config.php";
 require "includes/connect.php";
 include_once "_navbar.php";
 include_once "_header.php";
-
-$alert = false;
-
 ?>
 
 <main class="my-5 py-5">

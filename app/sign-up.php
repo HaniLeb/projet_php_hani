@@ -1,34 +1,6 @@
 <?php
     include_once "_navbar.php";
-
-    $alert = false;
-
-    if(isset($_GET["error"])){
-        $alert = true;
-
-        if($_GET['error'] == "missingInput"){
-            $type = "danger";
-            $message = "Tous les champs avec une * sont requis";
-        }
-        if($_GET['error'] == "usernameExists"){
-            $type = "warning";
-            $message = "Ce nom d'utilisateur existe déja";
-        }
-        if($_GET['error'] == "emailExists"){
-            $type = "warning";
-            $message = "Cette email est déjà utilisé";
-        }
-        if($_GET["error"] == "differentPasswords"){
-            $type = 'warning';
-            $message = "Les mots de passe sont différent";
-        }
-    }
-
-    if (isset($_GET['success'])) {
-        $alert = true;
-        $type = "success";
-        $message = "Votre inscription s'est bien passée !";
-    }
+    include_once "_alerts.php";
 ?>
 
 <div class="card-header text-center">

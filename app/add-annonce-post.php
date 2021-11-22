@@ -2,15 +2,14 @@
 $auth = true;
 require "includes/config.php";
 require 'includes/connect.php';
-include_once '_head.php';
 
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($_POST);
+// echo '</pre>';
 
-echo '<pre>';
-var_dump($_FILES);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($_FILES);
+// echo '</pre>';
 
 if(empty($_POST['title']) || empty($_POST['type']) || empty($_POST['description']) || empty($_POST['country']) || empty($_POST['town']) || empty($_POST['cp']) || empty($_POST['price'])){
     header('Location:add-annonce.php?error=missingInput');
@@ -87,6 +86,7 @@ try {
     $reqInsertAnnonce->bindValue(':image', $imagePath, PDO::PARAM_STR);
     $reqInsertAnnonce->bindValue(':rentalStart', $rentalStart, PDO::PARAM_STR);
     $reqInsertAnnonce->bindValue(':rentalEnd', $rentalEnd, PDO::PARAM_STR);
+    
     if ($reqInsertAnnonce->execute()) {
         header('Location:add-annonce.php?success=addedAnnonce');
         exit();

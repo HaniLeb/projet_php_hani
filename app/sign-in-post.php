@@ -2,9 +2,9 @@
 require "includes/config.php";
 require "includes/connect.php";
 
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
 // Je vérifie que les champs en question du formulaire sont rempli
 if(empty($_POST['username']) || empty($_POST['password'])){
@@ -39,9 +39,9 @@ try {
 }
 
 if ($user) {
-    echo '<pre>';
-    print_r($user);
-    echo '</pre>';
+    // echo '<pre>';
+    // print_r($user);
+    // echo '</pre>';
 
     if (!password_verify($password, $user['password'])) {
         header('Location:sign-in.php?error=passwordNotMatch');

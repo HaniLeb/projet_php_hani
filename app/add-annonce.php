@@ -2,41 +2,7 @@
 $auth = true;
 require "includes/config.php";
 include_once "_navbar.php";
-
-$alert = false;
-
-if(isset($_GET["error"])){
-    $alert = true;
-
-    if($_GET['error'] == "missingInput"){
-        $type = "danger";
-        $message = "Tous les champs sont requis";
-    }
-    if($_GET['error'] == "dateError"){
-        $type = "danger";
-        $message = "La date de début ne peut pas être supérieur à la date de fin de location ";
-    }
-    if($_GET['error'] == "unknownError"){
-        $type = "warning";
-        $message = "Une erreur s'est produite, réessayer ultérieurement.";
-    }
-    if($_GET['error'] == "tooBig"){
-        $type = "warning";
-        $message = "L'image est trop lourde , elle doit être < 10Mo";
-    }
-    if($_GET['error'] == "wrongFormat"){
-        $type = "warning";
-        $message = "L'image est au mauvais format : Les formats acceptés sont jpg,png,jpeg";
-    }
-}
-
-if (isset($_GET['success'])) {
-    $alert = true;
-    if ('addedAnnonce' == $_GET['success']) {
-        $type = 'success';
-        $message = 'Votre annonce a bien été ajouté';
-    }
-}
+include_once "_alerts.php";
 ?>
 
 <section class="vh-100">

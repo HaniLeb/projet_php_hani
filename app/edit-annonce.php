@@ -3,47 +3,9 @@ $auth = true;
 require "includes/config.php";
 require 'includes/connect.php';
 include_once "_navbar.php";
+include_once "_alerts.php";
 
 require "_view-details.php";
-
-$alert = false;
-
-if(isset($_GET["error"])){
-    $alert = true;
-
-    if($_GET['error'] == "missingInput"){
-        $type = "danger";
-        $message = "Tous les champs sont requis";
-    }
-    if($_GET['error'] == "dateError"){
-        $type = "danger";
-        $message = "La date de début ne peut pas être supérieur à la date de fin de location";
-    }
-    if($_GET['error'] == "malformedInput"){
-        $type = "danger";
-        $message = "Erreur id";
-    }
-    if($_GET['error'] == "unknownError"){
-        $type = "warning";
-        $message = "Une erreur s'est produite, réessayer ultérieurement.";
-    }
-    if($_GET['error'] == "tooBig"){
-        $type = "warning";
-        $message = "L'image est trop lourde , elle doit être < 10Mo";
-    }
-    if($_GET['error'] == "wrongFormat"){
-        $type = "warning";
-        $message = "L'image est au mauvais format : Les formats acceptés sont jpg,png,jpeg";
-    }
-}
-
-if (isset($_GET['success'])) {
-    $alert = true;
-    if ('modifAnnonce' == $_GET['success']) {
-        $type = 'success';
-        $message = 'Votre annonce a bien été modifier';
-    }
-}
 ?>
 
 <section class="vh-100">
