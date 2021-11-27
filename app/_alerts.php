@@ -64,5 +64,9 @@
             $type = 'success';
             $message = 'Votre annonce a bien été ajouté';
         }
+        if ('modifUser' == $_GET['success']) {
+            $type = 'success';
+            $message = 'Vos infos ont bien été modifier';
+        }
     }
 ?>

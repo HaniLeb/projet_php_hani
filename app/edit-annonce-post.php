@@ -100,7 +100,7 @@ try {
     $reqEditAnnonce->bindValue(':image', $imagePath, PDO::PARAM_STR);
     $reqEditAnnonce->bindValue(':rentalStart', $rentalStart, PDO::PARAM_STR);
     $reqEditAnnonce->bindValue(':rentalEnd', $rentalEnd, PDO::PARAM_STR);
-    $reqEditAnnonce->bindValue(':id', $id);
+    $reqEditAnnonce->bindValue(':id', $id, PDO::PARAM_INT);
 
     $reqEditAnnonce->execute();
     header("Location:edit-annonce.php?id=$getId&success=modifAnnonce");
