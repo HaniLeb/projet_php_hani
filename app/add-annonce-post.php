@@ -81,8 +81,8 @@ try {
     $reqInsertAnnonce->bindValue(':description', $description, PDO::PARAM_STR);
     $reqInsertAnnonce->bindValue(':country', $country, PDO::PARAM_STR);
     $reqInsertAnnonce->bindValue(':town', $town, PDO::PARAM_STR);
-    $reqInsertAnnonce->bindValue(':cp', $cp, PDO::PARAM_INT);
-    $reqInsertAnnonce->bindValue(':price', $price, PDO::PARAM_INT);
+    $reqInsertAnnonce->bindValue(':cp', $cp);
+    $reqInsertAnnonce->bindValue(':price', $price);
     $reqInsertAnnonce->bindValue(':image', $imagePath, PDO::PARAM_STR);
     $reqInsertAnnonce->bindValue(':rentalStart', $rentalStart, PDO::PARAM_STR);
     $reqInsertAnnonce->bindValue(':rentalEnd', $rentalEnd, PDO::PARAM_STR);
